@@ -17,9 +17,6 @@ class Program
         bool stopLoop = false;
         while (input != "quit" && stopLoop == false)
         {
-            // Check if the list has only underscore strings
-            stopLoop = word.CheckList();
-
             // Display the scripture
             scripture.DisplayFullScripture();
 
@@ -33,6 +30,9 @@ class Program
             word.SetWordList(scripture.GetScriptureList());
             word.HideWord();
             scripture.SetScriptureList(word.GetWordList());
+            
+            // Check if the list has only underscore strings
+            stopLoop = word.CheckList();
         }
     }
 }
